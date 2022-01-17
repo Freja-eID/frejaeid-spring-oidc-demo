@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Freja eID OIDC demo</title>
+    <style>
+        body {
+          margin-top:2em;
+          text-align: center;
+          background-color: #3e3a94;
+          color: white;
+        }
+        button {
+            background-image: linear-gradient(to top,#2ed189,#56be89);
+            border:none;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 6px;
+            color: white;
+        }
+    </style>
+</head>
+<body style="">
+<span>
+    Hello <span th:text="${email}"></span>!
+    <br/><br/>
+    You have successfully accessed protected page with Freja eID using Open ID Connect.
+    <br/></br>
+    <form action="/logout" method="POST">
+        <button>Logout</button>
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    </form>
+</span>
+</body>
+</html>
