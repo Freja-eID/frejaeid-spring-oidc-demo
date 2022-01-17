@@ -1,0 +1,13 @@
+spring:
+    security:
+        oauth2:
+            client:
+                registration:
+                    frejaeid_spring_oidc_demo:
+                        client-name: Freja eID OIDC demo
+                        client-id: frejaeid_spring_oidc_demo
+                        client-secret: @TBD
+                        scope: openid, email
+                provider:
+                    frejaeid_spring_oidc_demo:
+                        issuer-uri: https://oidc-st.test.frejaeid.com/oidc/
